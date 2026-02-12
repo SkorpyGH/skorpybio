@@ -301,4 +301,44 @@ input[type="range"]::-webkit-slider-thumb {
     align-items: center;
     gap: 5px;
     width: 80px;
+
+}
+/* --- МОБИЛЬНАЯ АДАПТАЦИЯ (ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ) --- */
+@media (max-width: 480px) {
+    
+    /* 1. Убираем лагающий фон и ставим градиент */
+    #bg-container {
+        display: none !important; 
+    }
+    
+    body {
+        background: radial-gradient(circle, #1a1a1a 0%, #000000 100%) !important;
+        background-attachment: fixed;
+    }
+
+    /* 2. Компактная карточка */
+    .card {
+        width: 85% !important;
+        padding: 15px !important;
+        margin-top: 20px !important;
+    }
+
+    /* 3. Настройка мобильного плеера */
+    .player-glass {
+        padding: 10px !important;
+    }
+    
+    .volume-container {
+        display: none !important; /* Прячем громкость */
+    }
+    
+    .track-info span {
+        font-size: 0.8rem !important;
+    }
+
+    .player-wrapper {
+        width: 92% !important;
+        left: 4% !important;
+        bottom: 15px !important;
+    }
 }
