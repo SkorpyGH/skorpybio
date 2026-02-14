@@ -170,15 +170,24 @@
     <audio id="audio-player" loop></audio>
     
     <script>
-        function enterSite() {
-            var start = document.getElementById('start-screen');
-            start.style.opacity = '0';
-            setTimeout(function() {
-                start.style.display = 'none';
-                document.getElementById('main-content').classList.remove('hidden');
-            }, 800);
-        }
-    </script>
-    <script src="script.js"></script>
+       function enterSite() {
+    var start = document.getElementById('start-screen');
+    var main = document.getElementById('main-content');
+    
+    // Плавно гасим черный экран
+    start.style.opacity = '0';
+    
+    setTimeout(function() {
+        start.style.display = 'none';
+        // Убираем класс hidden и ПРЯМО ЗАДАЕМ display flex
+        main.classList.remove('hidden');
+        main.style.display = 'flex'; 
+        main.style.opacity = '1';
+        
+        // Пытаемся запустить музыку через кнопку
+        try { document.getElementById("play-btn").click(); } catch(e) {}
+    }, 800);
+}
 </body>
 </html>
+
