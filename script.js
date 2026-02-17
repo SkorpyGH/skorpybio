@@ -182,4 +182,37 @@ if (avatar) {
   }
 });
 
+function enterSite() {
+  const start = document.getElementById("start-screen");
+  const main = document.getElementById("main-content");
+  const audio = document.getElementById("audio-player");
+
+  if (!start || !main) return;
+
+  start.style.opacity = "0";
+  start.style.pointerEvents = "none";
+
+  setTimeout(() => {
+    start.style.display = "none";
+
+    main.classList.remove("hidden");
+    main.style.display = "flex";
+    main.style.opacity = "1";
+    main.classList.add("visible");
+  }, 800);
+
+  if (audio) {
+    audio.play().catch(() => {});
+  }
+}
+
+// Важно: делаем функцию доступной для onclick=""
+window.enterSite = enterSite;
+
+// СТРАХОВКА: даже если onclick сломан — клик всё равно сработает
+document.addEventListener("DOMContentLoaded", () => {
+  const start = document.getElementById("start-screen");
+  if (start) start.addEventListener("click", enterSite);
+});
+
 
