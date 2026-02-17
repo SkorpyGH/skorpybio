@@ -26,8 +26,26 @@ document.addEventListener("DOMContentLoaded", () => {
   if (bg) bg.style.backgroundImage = `url('${CONFIG.backgroundUrl}')`;
 
   // аватар/ник
-  const avatar = document.getElementById("avatar");
-  if (avatar) avatar.src = CONFIG.avatarUrl;
+ const avatar = document.getElementById("avatar");
+if (avatar) {
+  const candidates = [
+    CONFIG.avatarUrl,   // то что в CONFIG
+    "avatar.png",
+    "avatar.jpg",
+    "avatar.jpeg",
+    "avatar.webp"
+  ].filter(Boolean);
+
+  // пробуем по очереди, пока не загрузится
+  const tryNext = (i) => {
+    if (i >= candidates.length) return;
+    const url = candidates[i] + "?v=" + Date.now(); // чтобы не мешал кеш
+    avatar.onerror = () => tryNext(i + 1);
+    avatar.src = url;
+  };
+
+  tryNext(0);
+}
 
   const nick = document.getElementById("nickname");
   if (nick) nick.textContent = CONFIG.nickname;
@@ -161,3 +179,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
