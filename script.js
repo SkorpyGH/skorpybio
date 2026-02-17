@@ -11,7 +11,7 @@ const CONFIG = {
   { name: "Telegram", url: "https://t.me/logovo_skorpy", icon: "telegram" },
   { name: "TikTok", url: "https://www.tiktok.com/@skorpy0n?_r=1&_t=ZS-93rOn0dX5Lr", icon: "tiktok" },
   { name: "YouTube", url: "https://www.youtube.com/@SkorpyYouTube", icon: "youtube" },
-  { name: "Spotify", url: "https://open.spotify.com/playlist/0VcOJtSLkDwvSRP8VOvhWR?si=8415f63e91d645fb", icon: "spotify" }
+  { name: "Spotify", url: "https://open.spotify.com/playlist/5E1qJD2Yz4BJDVHmbKvgou?si=c4adfead2eee4f05", icon: "spotify" }
 ]
 };
 
@@ -217,6 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const start = document.getElementById("start-screen");
   if (start) start.addEventListener("click", enterSite);
 });
+
 
 
 
