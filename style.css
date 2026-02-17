@@ -31,8 +31,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.8s ease; /* как ты просил */
+  transition: opacity 0.8s ease;
   cursor: pointer;
+
+  pointer-events: auto; /* ДОБАВЬ */
 }
 
 .start-text {
@@ -272,3 +274,4 @@ input[type="range"]::-webkit-slider-thumb {
     padding-bottom: 190px;
   }
 }
+
