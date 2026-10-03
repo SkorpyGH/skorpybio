@@ -12,7 +12,7 @@ const CONFIG = {
   socials: [
     { name: "TikTok", url: "https://www.tiktok.com/@skorpy0n?_r=1&_t=ZS-93rOn0dX5Lr", icon: "tiktok" },
     { name: "YouTube", url: "https://www.youtube.com/@SkorpyYouTube", icon: "youtube" },
-    { name: "Spotify", url: "https://open.spotify.com/playlist/5E1qJD2Yz4BJDVHmbKvgou?si=75653944baa94c90", icon: "spotify" }
+    { name: "Spotify", url: "https://open.spotify.com/playlist/1TzjkcydiBc5phz2NqmAzL?si=f23e781c3b9d433b", icon: "spotify" }
   ]
 };
 
